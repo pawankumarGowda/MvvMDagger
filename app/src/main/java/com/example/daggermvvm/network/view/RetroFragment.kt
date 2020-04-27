@@ -46,13 +46,27 @@ class RetroFragment: Fragment() {
         retroViewModel = ViewModelProviders.of(this,retroViewModelFactory).get(RetroViewModel::class.java)
     }
     fun fetchRetroInfo(){
-        retroViewModel.postInfoLiveData?.observe(this,object: Observer<List<PostInfo>> {
+        /*retroViewModel.postInfoLiveData?.observe(this,object: Observer<List<PostInfo>> {
             override fun onChanged(t: List<PostInfo>?) {
                 t?.apply {
                     listAdapter?.setAdapterList(t)
                 }
             }
-        })
+        })*/
+        val listPostInfo = listOf<PostInfo>(PostInfo("VCS2 APP NETWORK","Secure Network",""),
+            PostInfo("Connections Team network","Secure Network",""),
+            PostInfo("Trailer Team network","Secure Network",""),
+            PostInfo("Vehicle Team network","Secure Network",""),
+            PostInfo("Projection Team network","Secure Network",""),
+            PostInfo("Pawan","Secure Network",""),
+            PostInfo("Pratap network","Secure Network",""),
+            PostInfo("Sudhanshu Team network","Secure Network",""),
+            PostInfo("Chandrika Team network","Secure Network",""),
+            PostInfo("Chandrakanth Team network","Secure Network",""),
+            PostInfo("Harish","Secure Network","")
+        );
+
+        listAdapter?.setAdapterList(listPostInfo)
     }
     private fun setAdapter(){
         fragmentView?.post_list?.apply {
