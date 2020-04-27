@@ -4,6 +4,8 @@
     package="com.example.daggermvvm">
 
     <dist:module dist:instant="true" />
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
 
     <application
         android:name=".MyRetroApplication"
@@ -13,7 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".network.view.NetworkActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
